@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes mindturnFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes mindturnRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mindturnGlow {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(250, 204, 21, 0.35)); }
+  50% { filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.7)); }
+}
+
+.mindturn-logo-wrap {
+  animation: mindturnFloat 3.5s ease-in-out infinite;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.mindturn-logo-wrap:hover {
+  transform: scale(1.08);
+}
+
+.mindturn-logo-icon {
+  animation: mindturnGlow 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.mindturn-logo-ring {
+  transform-origin: 50px 50px;
+  animation: mindturnRingSpin 8s linear infinite;
+}
+
+.mindturn-logo-play {
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.mindturn-logo-wrap:hover .mindturn-logo-play {
+  transform: scale(1.15);
+}
